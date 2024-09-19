@@ -1,6 +1,15 @@
 # rock-paper-scissors
 
-Learning Typescript by building a Rock, Paper, Scissors game based on FreeCodeCamp's Rock Paper Scissors.
+Learning Typescript by building a Rock, Paper, Scissors game based on FreeCodeCamp's Rock Paper Scissors 
+
+## Setup
+
+Typescript and Nodemon installed globally converting to Javascript OOTB.
+
+## Goals
+
+1. Get a better understanding of the difference between Typescript and Javascript without getting too deep into a rabbit hole
+2. Make something aesthetically interesting
 
 ## TODO
 
