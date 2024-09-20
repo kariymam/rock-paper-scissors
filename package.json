@@ -4,8 +4,7 @@
   "description": "Learning Typescript by building a Rock, Paper, Scissors game based on FreeCodeCamp's Rock Paper Scissors.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
-    "build": "tsc index.ts --outDir src/"
+    "start": "tsc index.ts --watch --outDir public/"
   },
   "keywords": [],
   "author": "",
