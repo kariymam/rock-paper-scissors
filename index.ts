@@ -1,7 +1,2 @@
-function greeter(person) {
-    return "Hello, " + person;
-  }
-   
-  let user = "Jane User";
-   
-  document.body.textContent = greeter(user);
+const choiceBtns = document.getElementsByClassName('btn');
+console.log(choiceBtns);
