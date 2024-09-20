@@ -15,8 +15,8 @@ Typescript and Nodemon installed globally converting to Javascript OOTB.
 
 ### Basic functionality
 
-- [ ] Build function to get a random computer result
-- [ ] Build function to return true if player wins
+- [x] Build function to get a random computer result
+- [x] Build function to return true if player wins
 - [ ] Get the Round results of randomComputerResult() and playerHasWon()
   - [ ] If player has won, add to their playerScore
   - [ ] If computer has won, add to computerScore
