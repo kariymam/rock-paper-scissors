@@ -13,30 +13,24 @@
   <main>
         <!-- Rock, Paper, Scissors game incoming -->
         <h2>
-          Pick your option 
+          Pick your weapon 
         </h2>
-        <div class="choice-container">
+        <div id="choice-container">
           <button id="rock-btn" class="btn">Rock</button>
           <button id="paper-btn" class="btn">Paper</button>
           <button id="scissors-btn" class="btn">Scissors</button>
         </div>
         <div class="score-container">
-          <div id="player-score">
-            <h3>
-              Player Score
-            </h3>
-          </div>
-           <div id="computer-score">
-            <h3>
-              Computer Score
-            </h3>
-          </div>
+          <h3>Computer Score</h3>
+          <p id="computer-score"></p>
+          <h3>Player Score</h3>
+          <p id="player-score"></p>
           <div id="result">
             <p id="results-msg"></p>
             <p id="winner-msg"></p>
-            <button class="btn hidden" id="reset-game-btn">Play again?</button>
+            <button class="reset-btn hidden" id="reset-game-btn">Play again?</button>
           </div>
-          <div id="app"></div>
+        </div>
   </main>
   <footer>
   </footer>
