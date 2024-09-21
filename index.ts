@@ -1,15 +1,18 @@
 const playerButtons = document.querySelectorAll('#rock-btn, #paper-btn, #scissors-btn');
+const player = document.getElementById('player-score')?.querySelector<HTMLParagraphElement>('.score');
+const computer = document.getElementById('computer-score')?.querySelector<HTMLParagraphElement>('.score');
 
 let playerScore = 0;
 let computerScore = 0
 
 interface Player {
+    name: string;
     beats: Player;
 }
 
-const rock: Player = {} as Player;
-const paper: Player = {} as Player;
-const scissors: Player = {} as Player;
+const rock: Player = {name: "Rock"} as Player;
+const paper: Player = {name: "Paper"} as Player;
+const scissors: Player = {name: "Scissors"} as Player;
 
 rock.beats = scissors;
 paper.beats = rock;
@@ -30,13 +33,11 @@ playerButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const playerChoice = choices[btn.id];
         const computerChoice = randomComputerResult();
-        if (playerChoice === computerChoice){
-            return console.log(`It's a tie!`)
+        if (!playerHasWon(playerChoice, computerChoice) && !(playerChoice.name === computerChoice.name)){
+            ++computerScore
         } else if (playerHasWon(playerChoice, computerChoice)){
             ++playerScore
-        } else {
-            ++computerScore
         }
-        return console.log(`Player Score: ${playerScore}, Computer Score: ${computerScore}`);
+        return console.log(`Player Choice: ${playerChoice.name} Score: ${playerScore}, Computer Choice: ${computerChoice.name} Score: ${computerScore}`);
     });
 });
