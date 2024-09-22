@@ -3,10 +3,11 @@ const roundResultsMsg: HTMLElement = document.querySelector('#results-msg');
 const playerScore: HTMLElement = document.querySelector('#player-score');
 const computerScore: HTMLElement = document.querySelector('#computer-score');
 const winnerMsg: HTMLElement = document.querySelector('#winner-msg');
+const resetGameBtn: HTMLElement = document.querySelector('#reset-game-btn');
 
-interface Player { name: string; score: number; winner: () => boolean }
-let user: Player = { name: "You", score: 0 } as Player;
-let computer: Player = { name: "Computer", score: 0 } as Player;
+interface Player { name: string; score: number; winner: () => boolean; }
+let user: Player = { name: "You", score: 0, winner: () => (user.score === 3) };
+let computer: Player = { name: "Computer", score: 0, winner: () => (computer.score === 3) };
 
 type Weapon = { name: string; beats: Weapon; }
 const rock: Weapon = {name: "Rock"} as Weapon;
@@ -16,9 +17,6 @@ const scissors: Weapon = {name: "Scissors"} as Weapon;
 rock.beats = scissors;
 paper.beats = rock;
 scissors.beats = paper;
-
-computer.winner = () => (computer.score === 3);
-user.winner = () => (user.score === 3);
 
 function randomComputerResult(): Weapon {
     const options = [rock, paper, scissors];
@@ -47,3 +45,12 @@ playerButtons.forEach((btn) => {
     });
 });
 
+resetGameBtn.addEventListener("click", () => {
+    user.score = 0;
+    computer.score = 0;
+    playerScore.innerText = `${user.score}`
+    computerScore.innerText = `${computer.score}`;
+    winnerMsg.innerText = '';
+    roundResultsMsg.innerText = '';
+    return
+})

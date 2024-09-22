@@ -20,19 +20,21 @@ Typescript and Nodemon installed globally converting to Javascript OOTB.
 - [x] Get the Round results of randomComputerResult() and playerHasWon()
   - [x] If player has won, add to their playerScore
   - [x] If computer has won, add to computerScore
-- [ ] Display results
-  - [ ] After 3 rounds display player or computer wins
-  - [ ] player choice
-  - [ ] computer choice
+- [X] Display results
+  - [X] After 3 rounds display player or computer wins
+  - [X] player choice
+  - [X] computer choice
   - [X] Update player score
   - [X] Update computer score
-  - [ ] Display illustrations
-- [ ] Reset game
+~~  - [ ] Display illustrations~~
+- [X] Reset game
 
 ### Getting fancy
 
+- [ ] Find a more acceptable way to DOM manipulate rather than .innerText everywhere
 - [ ] Choose number of rounds
 - [ ] Display number of rounds, player won/computer won/tied round
+- [ ] Display illustrations
 
 ### Nice to have: Illustrations
 

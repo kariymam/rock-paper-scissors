@@ -4,16 +4,15 @@ const roundResultsMsg = document.querySelector('#results-msg');
 const playerScore = document.querySelector('#player-score');
 const computerScore = document.querySelector('#computer-score');
 const winnerMsg = document.querySelector('#winner-msg');
-let user = { name: "You", score: 0 };
-let computer = { name: "Computer", score: 0 };
+const resetGameBtn = document.querySelector('#reset-game-btn');
+let user = { name: "You", score: 0, winner: () => (user.score === 3) };
+let computer = { name: "Computer", score: 0, winner: () => (computer.score === 3) };
 const rock = { name: "Rock" };
 const paper = { name: "Paper" };
 const scissors = { name: "Scissors" };
 rock.beats = scissors;
 paper.beats = rock;
 scissors.beats = paper;
-computer.winner = () => (computer.score === 3);
-user.winner = () => (user.score === 3);
 function randomComputerResult() {
     const options = [rock, paper, scissors];
     return options[Math.floor(Math.random() * options.length)];
@@ -36,4 +35,13 @@ playerButtons.forEach((btn) => {
         playerScore.innerText = `${user.score}`;
         computerScore.innerText = `${computer.score}`;
     });
+});
+resetGameBtn.addEventListener("click", () => {
+    user.score = 0;
+    computer.score = 0;
+    playerScore.innerText = `${user.score}`;
+    computerScore.innerText = `${computer.score}`;
+    winnerMsg.innerText = '';
+    roundResultsMsg.innerText = '';
+    return;
 });
