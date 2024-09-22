@@ -22,9 +22,17 @@ Typescript and Nodemon installed globally converting to Javascript OOTB.
   - [x] If computer has won, add to computerScore
 - [ ] Display results
   - [ ] After 3 rounds display player or computer wins
-  - [ ] Update player score
-  - [ ] Update computer score
+  - [ ] player choice
+  - [ ] computer choice
+  - [X] Update player score
+  - [X] Update computer score
   - [ ] Display illustrations
+- [ ] Reset game
+
+### Getting fancy
+
+- [ ] Choose number of rounds
+- [ ] Display number of rounds, player won/computer won/tied round
 
 ### Nice to have: Illustrations
 
