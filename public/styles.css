@@ -29,7 +29,7 @@ footer {
     flex-direction: row;
     max-width: var(--width);
     gap: 0.25em;
-    padding: 1em;
+    padding: 1em 0;
 }
 
 #result-msg p, #score-container {
@@ -41,13 +41,6 @@ footer {
         width: 100%;
     }
 }
-
-/* #result-msg {
-    color: grey;
-    & :first-child {
-        color: black;
-    }
-} */
 
 #result-msg {
     color: grey;
@@ -67,6 +60,7 @@ footer {
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
     max-width: var(--width);
+    font-weight: bold;
     width: 100%;
     & .computer-winner {
         grid-column-start: 2;

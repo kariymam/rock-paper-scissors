@@ -30,7 +30,7 @@ function getRoundResult(userOption) {
     return { points, playerChoice, computerChoice };
 }
 function displayScore(result) {
-    winnerMsg.innerHTML = user.winner() ? `<span class="user-winner">${user.name} win!</span>` : computer.winner() ? `<span class="computer-winner">${computer.name} wins!</span>` : ``;
+    winnerMsg.innerHTML = user.winner() ? `<span class="user-winner">🏆 ${user.name} win!</span>` : computer.winner() ? `<span class="computer-winner">🏆 ${computer.name} wins!</span>` : ``;
     playerScore.innerText = `${user.score}`;
     computerScore.innerText = `${computer.score}`;
     return `<span>${user.name}: 
