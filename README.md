@@ -32,8 +32,8 @@ Typescript and Nodemon installed globally converting to Javascript OOTB.
 ### Getting fancy
 
 - [ ] Find a more acceptable way to DOM manipulate rather than .innerText everywhere
-- [ ] Choose number of rounds
-- [ ] Display number of rounds, player won/computer won/tied round
+- [X] Choose number of rounds
+- [X] Display number of rounds, player won/computer won/tied round
 - [ ] Display illustrations
 
 ### Nice to have: Illustrations
