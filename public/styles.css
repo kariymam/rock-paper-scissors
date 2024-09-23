@@ -2,3 +2,25 @@
     display: none;
     visibility: hidden;
 }
+/* 
+#result-msg p, #score-container {
+    display: flex;
+    margin: 0 0;
+    max-width: 320px;
+    & span {
+        width: 100%;
+    }
+}
+
+#winner-msg {
+    max-width: 320px;
+}
+
+.score {
+    display: flex;
+    width: 100%;
+    & p {
+        font-size: 1.17em;
+        margin-left: 0.25em;
+    }
+} */

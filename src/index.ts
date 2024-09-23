@@ -1,6 +1,6 @@
 const playerButtons = document.querySelectorAll('#rock-btn, #paper-btn, #scissors-btn');
-const choicesBtnContainer = (document.getElementById('choice-container') as HTMLDivElement)
 let inputValue = (document.getElementById('rounds') as HTMLInputElement);
+const choicesBtnContainer = (document.getElementById('choice-container') as HTMLDivElement)
 const roundResultsMsg = (document.querySelector('#result-msg') as HTMLParagraphElement);
 const playerScore = (document.querySelector('#player-score') as HTMLParagraphElement);
 const computerScore = (document.querySelector('#computer-score') as HTMLParagraphElement);
@@ -44,8 +44,7 @@ function displayScore(result: { points: number, playerChoice: Weapon, computerCh
     computerScore.innerText = `${computer.score}`;
     return `<span>${user.name}: 
             ${result.playerChoice.name} 
-            ${result.computerChoice === result.playerChoice.beats ? '(+1)' : ''}</span> |
-            <span>${computer.name}: ${result.computerChoice.name} 
+            ${result.computerChoice === result.playerChoice.beats ? '(+1)' : ''}</span><span>${computer.name}: ${result.computerChoice.name} 
             ${result.playerChoice === result.computerChoice.beats ? '(+1)' : ''}</span>`
 }
 

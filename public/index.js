@@ -1,7 +1,7 @@
 "use strict";
 const playerButtons = document.querySelectorAll('#rock-btn, #paper-btn, #scissors-btn');
-const choicesBtnContainer = document.getElementById('choice-container');
 let inputValue = document.getElementById('rounds');
+const choicesBtnContainer = document.getElementById('choice-container');
 const roundResultsMsg = document.querySelector('#result-msg');
 const playerScore = document.querySelector('#player-score');
 const computerScore = document.querySelector('#computer-score');
@@ -35,8 +35,7 @@ function displayScore(result) {
     computerScore.innerText = `${computer.score}`;
     return `<span>${user.name}: 
             ${result.playerChoice.name} 
-            ${result.computerChoice === result.playerChoice.beats ? '(+1)' : ''}</span> |
-            <span>${computer.name}: ${result.computerChoice.name} 
+            ${result.computerChoice === result.playerChoice.beats ? '(+1)' : ''}</span><span>${computer.name}: ${result.computerChoice.name} 
             ${result.playerChoice === result.computerChoice.beats ? '(+1)' : ''}</span>`;
 }
 const choices = { 'rock-btn': rock, 'paper-btn': paper, 'scissors-btn': scissors };
