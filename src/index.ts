@@ -8,8 +8,8 @@ const winnerMsg = (document.querySelector('#winner-msg') as HTMLDivElement);
 const resetGameBtn = (document.querySelector('#reset-game-btn') as HTMLButtonElement);
 
 interface Player { name: string; score: number; winner: () => boolean; }
-let user: Player = { name: "You", score: 0, winner: () => (user.score === parseInt(inputValue.value, 10)) };
-let computer: Player = { name: "Computer", score: 0, winner: () => (computer.score === parseInt(inputValue.value, 10)) };
+let user: Player = { name: "You", score: 0, winner: () => (user.score >= parseInt(inputValue.value, 10) && user.score > computer.score) };
+let computer: Player = { name: "Computer", score: 0, winner: () => (computer.score >= parseInt(inputValue.value, 10) && computer.score > user.score) };
 
 type Weapon = { name: string; beats: Weapon; }
 const rock: Weapon = {name: "Rock"} as Weapon;
