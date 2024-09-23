@@ -2,8 +2,8 @@ const playerButtons = document.querySelectorAll('#rock-btn, #paper-btn, #scissor
 let inputValue = (document.getElementById('rounds') as HTMLInputElement);
 const choicesBtnContainer = (document.getElementById('choice-container') as HTMLDivElement)
 const roundResultsMsg = (document.querySelector('#result-msg') as HTMLDivElement);
-const playerScore = (document.querySelector('#player-score') as HTMLParagraphElement);
-const computerScore = (document.querySelector('#computer-score') as HTMLParagraphElement);
+const playerScore = (document.querySelector('#player-score') as HTMLHeadingElement);
+const computerScore = (document.querySelector('#computer-score') as HTMLHeadingElement);
 const winnerMsg = (document.querySelector('#winner-msg') as HTMLDivElement);
 const resetGameBtn = (document.querySelector('#reset-game-btn') as HTMLButtonElement);
 
@@ -60,6 +60,7 @@ playerButtons.forEach((btn) => {
         if (user.winner() || computer.winner()){
             choicesBtnContainer.classList.add('hidden');
             resetGameBtn.classList.remove('hidden');
+            resetGameBtn.parentElement?.classList.remove('hidden');
         }
     });
 });
@@ -72,6 +73,7 @@ resetGameBtn.addEventListener("click", () => {
     winnerMsg.innerText = '';
     roundResultsMsg.innerText = '';
     choicesBtnContainer.classList.remove('hidden');
+    resetGameBtn.parentElement?.classList.add('hidden');
     resetGameBtn.classList.add('hidden');
     return
 })

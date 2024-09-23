@@ -48,6 +48,7 @@ playerButtons.forEach((btn) => {
         if (user.winner() || computer.winner()) {
             choicesBtnContainer.classList.add('hidden');
             resetGameBtn.classList.remove('hidden');
+            resetGameBtn.parentElement?.classList.remove('hidden');
         }
     });
 });
@@ -59,6 +60,7 @@ resetGameBtn.addEventListener("click", () => {
     winnerMsg.innerText = '';
     roundResultsMsg.innerText = '';
     choicesBtnContainer.classList.remove('hidden');
+    resetGameBtn.parentElement?.classList.add('hidden');
     resetGameBtn.classList.add('hidden');
     return;
 });
