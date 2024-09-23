@@ -7,7 +7,6 @@ const playerScore = document.querySelector('#player-score');
 const computerScore = document.querySelector('#computer-score');
 const winnerMsg = document.querySelector('#winner-msg');
 const resetGameBtn = document.querySelector('#reset-game-btn');
-inputValue.addEventListener('input', () => { inputValue.value; });
 let user = { name: "You", score: 0, winner: () => (user.score === parseInt(inputValue.value, 10)) };
 let computer = { name: "Computer", score: 0, winner: () => (computer.score === parseInt(inputValue.value, 10)) };
 const rock = { name: "Rock" };
@@ -16,6 +15,7 @@ const scissors = { name: "Scissors" };
 rock.beats = scissors;
 paper.beats = rock;
 scissors.beats = paper;
+const choices = { 'rock-btn': rock, 'paper-btn': paper, 'scissors-btn': scissors };
 function randomComputerResult() {
     const options = [rock, paper, scissors];
     return options[Math.floor(Math.random() * options.length)];
@@ -30,7 +30,7 @@ function getRoundResult(userOption) {
     return { points, playerChoice, computerChoice };
 }
 function displayScore(result) {
-    winnerMsg.innerText = user.winner() ? `${user.name} win!` : computer.winner() ? `${computer.name} wins!` : ``;
+    winnerMsg.innerHTML = user.winner() ? `<span class="user-winner">${user.name} win!</span>` : computer.winner() ? `<span class="computer-winner">${computer.name} wins!</span>` : ``;
     playerScore.innerText = `${user.score}`;
     computerScore.innerText = `${computer.score}`;
     return `<span>${user.name}: 
@@ -38,7 +38,7 @@ function displayScore(result) {
             ${result.computerChoice === result.playerChoice.beats ? '(+1)' : ''}</span><span>${computer.name}: ${result.computerChoice.name} 
             ${result.playerChoice === result.computerChoice.beats ? '(+1)' : ''}</span>`;
 }
-const choices = { 'rock-btn': rock, 'paper-btn': paper, 'scissors-btn': scissors };
+inputValue.addEventListener('input', () => { inputValue.value; });
 playerButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const result = getRoundResult(choices[btn.id]);

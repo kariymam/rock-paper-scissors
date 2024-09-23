@@ -13,24 +13,26 @@
   <main>
         <!-- Rock, Paper, Scissors game incoming -->
          <div class="rounds-input">
-           <label>First to: </label>
+           <span>First to: </span>
            <input type="number" id="rounds" value="3" name="rounds" min="1" max="10" placeholder="3" />
          </div>
         <h2>
           Choose your weapon 
         </h2>
         <div>
-          <div id="choice-container">
+          <div id="choice-container" class="container">
             <button id="rock-btn" class="btn">Rock</button>
             <button id="paper-btn" class="btn">Paper</button>
             <button id="scissors-btn" class="btn">Scissors</button>
           </div>
-          <button class="reset-btn hidden" id="reset-game-btn">Play again?</button>
+          <div class="container">
+            <button class="reset-btn hidden" id="reset-game-btn">Play again?</button>
+          </div>
         </div>
         <div>
           <div id="score-container">
             <div class="score">
-              <h3>Player</h3>
+              <h3>You</h3>
               <p id="player-score">0</p>
             </div>
             <div class="score">
@@ -39,8 +41,8 @@
             </div>
           </div>
           <div id="result">
-            <p id="winner-msg"></p>
-            <p id="result-msg"></p>
+            <div id="winner-msg"></div>
+            <div id="result-msg"></div>
           </div>
         </div>
   </main>

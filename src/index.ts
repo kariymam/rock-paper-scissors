@@ -1,13 +1,11 @@
 const playerButtons = document.querySelectorAll('#rock-btn, #paper-btn, #scissors-btn');
 let inputValue = (document.getElementById('rounds') as HTMLInputElement);
 const choicesBtnContainer = (document.getElementById('choice-container') as HTMLDivElement)
-const roundResultsMsg = (document.querySelector('#result-msg') as HTMLParagraphElement);
+const roundResultsMsg = (document.querySelector('#result-msg') as HTMLDivElement);
 const playerScore = (document.querySelector('#player-score') as HTMLParagraphElement);
 const computerScore = (document.querySelector('#computer-score') as HTMLParagraphElement);
-const winnerMsg = (document.querySelector('#winner-msg') as HTMLParagraphElement);
+const winnerMsg = (document.querySelector('#winner-msg') as HTMLDivElement);
 const resetGameBtn = (document.querySelector('#reset-game-btn') as HTMLButtonElement);
-
-inputValue.addEventListener('input', () => {inputValue.value});
 
 interface Player { name: string; score: number; winner: () => boolean; }
 let user: Player = { name: "You", score: 0, winner: () => (user.score === parseInt(inputValue.value, 10)) };
@@ -21,6 +19,8 @@ const scissors: Weapon = {name: "Scissors"} as Weapon;
 rock.beats = scissors;
 paper.beats = rock;
 scissors.beats = paper;
+
+const choices = { 'rock-btn': rock, 'paper-btn': paper, 'scissors-btn': scissors };
 
 function randomComputerResult(): Weapon {
     const options = [rock, paper, scissors];
@@ -39,7 +39,7 @@ function getRoundResult(userOption: Weapon) {
 }
 
 function displayScore(result: { points: number, playerChoice: Weapon, computerChoice: Weapon }) {
-    winnerMsg.innerText = user.winner() ? `${user.name} win!` : computer.winner() ? `${computer.name} wins!` : ``;
+    winnerMsg.innerHTML = user.winner() ? `<span class="user-winner">${user.name} win!</span>` : computer.winner() ? `<span class="computer-winner">${computer.name} wins!</span>` : ``;
     playerScore.innerText = `${user.score}`;
     computerScore.innerText = `${computer.score}`;
     return `<span>${user.name}: 
@@ -48,7 +48,8 @@ function displayScore(result: { points: number, playerChoice: Weapon, computerCh
             ${result.playerChoice === result.computerChoice.beats ? '(+1)' : ''}</span>`
 }
 
-const choices = { 'rock-btn': rock, 'paper-btn': paper, 'scissors-btn': scissors };
+inputValue.addEventListener('input', () => {inputValue.value});
+
 playerButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const result = getRoundResult(choices[btn.id]);

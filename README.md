@@ -34,6 +34,7 @@ Typescript and Nodemon installed globally converting to Javascript OOTB.
 - [ ] Find a more acceptable way to DOM manipulate rather than .innerText everywhere
 - [X] Choose number of rounds
 - [X] Display number of rounds, player won/computer won/tied round
+- [ ] BUG: If user starts with a "First to (3)", plays until player or computer gets 2 or <3 (like Player: 2, Computer: 3), then changes the "First to" input to (1), and keeps playing, both player and computer keep getting points counted towards and nobody wins.
 - [ ] Display illustrations
 
 ### Nice to have: Illustrations
